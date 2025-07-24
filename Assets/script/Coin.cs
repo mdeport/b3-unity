@@ -15,7 +15,6 @@ public class Coin : MonoBehaviour
                 scoreManager.AddPoints(points);
             }
             Destroy(transform.parent.parent.parent.gameObject);
-            print("into");
         }
 
     }

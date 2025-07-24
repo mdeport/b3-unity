@@ -16,6 +16,8 @@ public class CountDown : MonoBehaviour
     {
         canvasGameOver.SetActive(false);
         canvasVictoire.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         StartCoroutine(timer());
     }
 
@@ -33,6 +35,8 @@ public class CountDown : MonoBehaviour
                 {
                     isTimerRunning = false;
                     canvasVictoire.SetActive(true);
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
                     yield break;
                 }
             }
@@ -42,6 +46,8 @@ public class CountDown : MonoBehaviour
         {
             TimeText.text = "0";
             canvasGameOver.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
